@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+
+   dbserver:
+      image: mariadb
+      container_name: achats_mariadb
+      volumes:
+         - dbdata_achats:/var/lib/mysql
+      restart: always
+      environment:
+         MYSQL_ROOT_PASSWORD: pass*1234
+         MYSQL_DATABASE: achats
+         MYSQL_USER: achats_user
+         MYSQL_PASSWORD: pass*9876
+
+   webserver:
+     depends_on:
+       - dbserver
+     container_name: achats_webserver
+     image: php:7.4-apache
+     volumes:
+       - ./html:/var/www/html:rw
+     ports:
+       - "8000:80"
+     restart: always
+     environment:
+         MYSQL_DB_HOST: dbserver:3306
+
+   adminer:
+     image: adminer
+     container_name: achats_adminer
+     restart: always
+     ports:
+       - 8001:8080
+
+volumes:
+    dbdata_achats:
