@@ -3,6 +3,7 @@ require_once("view.php");
 
 echo startHtml();
 echo printTitre("Archives");
+echo updateItem();
 
 $sJson = file_get_contents('http://192.168.122.202:8001/archive/');
 $aItems = json_decode($sJson, true);

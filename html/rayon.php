@@ -27,6 +27,7 @@ function printRayon($aRayon)
                     <li class="list-group-item d-flex justify-content-between">
                         <a href="%s" class="col-xs-11">
                             %s
+                            %s
                         </a>
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,11 +46,13 @@ EOD;
 
     $sUrl = "#";
     $sRayon = $aRayon['rayon'];
+    $sParDefaut = $aRayon['defaut'] ? '<span class="badge bg-primary ms-2">Par défaut</span>' : '';
 
     $sReturn = sprintf(
         $sReturn, 
         $sUrl, 
-        $sRayon, 
+        $sRayon,
+        $sParDefaut,
         $sUrl, 
         $sUrl,
         $sUrl, 

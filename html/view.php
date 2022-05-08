@@ -93,6 +93,26 @@ EOD;
     return($sReturn);
 }
 
+function updateItem()
+{
+
+    $sReturn = <<<'EOD'
+    <div class="row">
+        <form class="row g-3">
+            <div class="col-auto">
+              <label for="item" class="visually-hidden">Nouveau</label>
+              <input type="text" class="form-control" id="item" placeholder="Modifier" size="90">
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-3">Modifier</button>
+            </div>
+        </form>
+    </div>
+EOD;
+
+    return($sReturn);
+}
+
 function ajoutRayon()
 {
 
@@ -101,9 +121,15 @@ function ajoutRayon()
         <form class="row g-3">
             <div class="col-auto">
               <label for="nouveau" class="visually-hidden">Nouveau</label>
-              <input type="text" class="form-control" id="nouveau" placeholder="Nouveau rayon" size="90">
+              <input type="text" class="form-control" id="nouveau" placeholder="Nouveau rayon" size="50">
             </div>
-            <div class="col-auto">
+            <div class="form-check col-auto ms-4">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+              Par défaut
+              </label>
+            </div>
+            <div class="col-auto ms-5">
               <button type="submit" class="btn btn-primary mb-3">Ajouter</button>
             </div>
         </form>

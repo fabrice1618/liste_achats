@@ -2,10 +2,10 @@ from typing import Optional
 from fastapi import FastAPI
 
 rayons = [
-    { 'rayonid': 1, 'rayon': 'Divers' },
-    { 'rayonid': 2, 'rayon': 'Boucherie' },
-    { 'rayonid': 3, 'rayon': 'Primeur' },
-    { 'rayonid': 4, 'rayon': 'Epicerie' }
+    { 'rayonid': 1, 'rayon': 'Divers', 'defaut': True },
+    { 'rayonid': 2, 'rayon': 'Boucherie', 'defaut': False },
+    { 'rayonid': 3, 'rayon': 'Primeur', 'defaut': False },
+    { 'rayonid': 4, 'rayon': 'Epicerie', 'defaut': False }
 ]
 
 liste = [
